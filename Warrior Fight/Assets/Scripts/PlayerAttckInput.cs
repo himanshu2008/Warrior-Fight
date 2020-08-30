@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttckInput : MonoBehaviour
 {
     private CharacterAnimations playerAnimation;
+    public GameObject attackPoint;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerAttckInput : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.J))
         {
+            playerAnimation.UnFreezeAnimation();
             playerAnimation.Defend(false);
         }
 
@@ -35,6 +37,19 @@ public class PlayerAttckInput : MonoBehaviour
             {
                 playerAnimation.Attack_2();
             }
+        }
+    }
+
+    void Activate_AttackPoint()
+    {
+        attackPoint.SetActive(true);
+    }
+
+    void Deactivate_AttackPoint()
+    {
+        if (attackPoint.activeInHierarchy)
+        {
+            attackPoint.SetActive(false);
         }
     }
 }
