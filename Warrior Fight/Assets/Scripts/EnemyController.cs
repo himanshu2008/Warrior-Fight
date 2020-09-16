@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public enum EnemyState
@@ -20,18 +18,16 @@ public class EnemyController : MonoBehaviour
     private float attackTimer;
     private EnemyState enemyState;
     public GameObject attackPoint;
-
-    void Awake()
-    {
-        enemyAnim = GetComponent<CharacterAnimations>();
-        navAgent = GetComponent<NavMeshAgent>();
-        playerTarget = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).transform;
-    }
+    private CharacterSoundFX soundFX;
 
     void Start()
     {
         enemyState = EnemyState.CHASE;
         attackTimer = wait_Before_Attack_Time;
+        enemyAnim = GetComponent<CharacterAnimations>();
+        navAgent = GetComponent<NavMeshAgent>();
+        playerTarget = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).transform;
+        soundFX = GetComponentInChildren<CharacterSoundFX>();
     }
 
     void Update()
@@ -75,10 +71,12 @@ public class EnemyController : MonoBehaviour
             if (Random.Range(0, 2) > 0)
             {
                 enemyAnim.Attack_1();
+                soundFX.Attack_1();
             }
             else
             {
                 enemyAnim.Attack_2();
+                soundFX.Attack_2();
             }
             attackTimer = 0f;
         }

@@ -1307,6 +1307,7 @@ GameObject:
   - component: {fileID: 7336073725731574651}
   - component: {fileID: 9091804224457707506}
   - component: {fileID: 2066890111881743422}
+  - component: {fileID: 6067724077458875230}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -1410,6 +1411,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955f6cc1e2c150144b9989268105a515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3.5
+  attackDistance: 1.3
+  chase_Player_After_Attack_Distance: 1
+  attackPoint: {fileID: 0}
+--- !u!114 &6067724077458875230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191509344818236919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bae25450bbce24bb04934bddbf8f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 0
 --- !u!1 &191509344818236921
 GameObject:
   m_ObjectHideFlags: 0

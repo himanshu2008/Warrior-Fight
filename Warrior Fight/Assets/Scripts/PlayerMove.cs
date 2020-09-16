@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController charController;
     private CharacterAnimations playerAnimations;
-
     public float movement_Speed = 3f;
     public float gravity = 9.8f;
     public float rotation_Speed = 0.15f;
